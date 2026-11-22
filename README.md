@@ -1,5 +1,24 @@
 > **Ethyneon Studio (feature/mitran).** The full working flow: live camera or photos → Decision 1 full-coverage gate → Gemini 4 Neon room → chat or voice planning (Argon, Gemini 3.8 Live) with drag-and-drop → Design view with cached 3D Shopify products, guarded edits, Shopify link → 3D, and a Decision 1 checkout audit. Run every command below from the repository root, copy `.env.example` to `.env` with your own keys, and open http://127.0.0.1:8000/.
 
+## Demo video
+
+[![Ethyneon Studio full-flow demo (click to open the full video)](docs/media/ethyneon-demo-preview.gif)](docs/media/ethyneon-full-flow-demo.mp4)
+
+**[▶ Full-flow demo video (MP4, 4 min 44 s, no sound)](docs/media/ethyneon-full-flow-demo.mp4)** · demo-video room scan → Decision 1 full coverage → 3D room → chat planning with Argon → drag-and-drop refused by guardrails → voice edit with Gemini 3.8 Live → confirm → Design view → checkout audit → Shopify checkout (not paid). The preview above is sped up.
+
+| Step | Screenshot |
+| --- | --- |
+| 1. Live scan: Decision 1 guides each new view | ![Live scan guidance](docs/media/01-live-scan-guidance.png) |
+| 2. Full coverage → 3D room built by Gemini 4 Neon | ![Room built](docs/media/02-room-built.png) |
+| 3. Chat plan with the live room (amber = suggested) | ![Chat plan](docs/media/03-chat-plan-live-room.png) |
+| 4. Drag through a wall → refused by guardrails | ![Drag refused](docs/media/04-drag-refused-by-guardrails.png) |
+| 5. Product panel: rotating 3D, rotate, alternatives | ![Product panel](docs/media/05-product-panel-alternatives.png) |
+| 6. Voice edit: "add a floor lamp next to the desk" | ![Voice edit](docs/media/06-voice-edit.png) |
+| 7. Design view with price tags and 3D status | ![Design view](docs/media/07-design-view.png) |
+| 8. Design view product panel with alternatives | ![Design product panel](docs/media/08-design-product-panel.png) |
+| 9. Checkout review: live Shopify checks + Decision 1 audit | ![Checkout review](docs/media/09-checkout-review.png) |
+| 10. Shopify-hosted checkout (stopped before payment) | ![Shopify checkout](docs/media/10-shopify-checkout-not-paid.png) |
+
 # Ethyneon Python connection layer
 
 This FastAPI service provides the connection endpoints for Room Studio, Design Studio, and Shopify Checkout. It follows the team's `GET /api/agora/token` route and `{code, message, retryable, details}` error format.
